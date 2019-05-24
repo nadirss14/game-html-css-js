@@ -18,7 +18,10 @@
 </head>
 <body>
     <section >
-        <div id="header" >Game of letther</div>
+        <div class="banner">  
+                <div id="header" >Game of letther</div>
+        </div>
+        
         <div id="sec-main">         
             <div id="sec-game"> 
                     <div id="A" data-letter="A" class="letter-cube">A</div>
@@ -35,7 +38,7 @@
                     <div id="L" data-letter="L" class="letter-cube">L</div>
                     <div id="M" data-letter="M" class="letter-cube">M</div>
                     <div id="N" data-letter="N" class="letter-cube">N</div>
-                    <div id="N" data-letter="Ñ" class="letter-cube">Ñ</div>
+                    <div id="Ñ" data-letter="Ñ" class="letter-cube">Ñ</div>
                     <div id="O" data-letter="O" class="letter-cube">O</div>
                     <div id="P" data-letter="P" class="letter-cube">P</div>
                     <div id="Q" data-letter="Q" class="letter-cube">Q</div>
@@ -77,7 +80,7 @@
                         <div>                                                 
                             <div>
                                 <input type="button" class="btn-base" value="Iniciar a Jugar" onclick="initGame()">
-                                <input type="button" class="btn-base" value="Salir">  
+                                <input type="button" class="btn-base" value="Evaluar jugada" onclick="evaluation()">  
                             </div>
                             <div>
                                     <div class="lbl-base">Nivel: </div>
