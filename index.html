@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="css/styles.css"  >
+    <link href="https://fonts.googleapis.com/css?family=Orbitron|Roboto|Permanent+Marker&display=swap" rel="stylesheet">
+    <script src="js/index.js" ></script>
+    <script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous">
+    </script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <title>Game of Letters</title>
+</head>
+<body>
+    <section >
+        <div id="header" >Game of letther</div>
+        <div id="sec-main">         
+            <div id="sec-game"> 
+                    <div id="A" data-letter="A" class="letter-cube">A</div>
+                    <div id="B" data-letter="B" class="letter-cube">B</div>
+                    <div id="C" data-letter="C" class="letter-cube">C</div>
+                    <div id="D" data-letter="D" class="letter-cube">D</div>
+                    <div id="E" data-letter="E" class="letter-cube">E</div>
+                    <div id="F" data-letter="F" class="letter-cube">F</div>
+                    <div id="G" data-letter="G" class="letter-cube">G</div>
+                    <div id="H" data-letter="H" class="letter-cube">H</div>
+                    <div id="I" data-letter="I" class="letter-cube">I</div>
+                    <div id="J" data-letter="J" class="letter-cube">J</div>
+                    <div id="K" data-letter="K" class="letter-cube">K</div>
+                    <div id="L" data-letter="L" class="letter-cube">L</div>
+                    <div id="M" data-letter="M" class="letter-cube">M</div>
+                    <div id="N" data-letter="N" class="letter-cube">N</div>
+                    <div id="N" data-letter="Ñ" class="letter-cube">Ñ</div>
+                    <div id="O" data-letter="O" class="letter-cube">O</div>
+                    <div id="P" data-letter="P" class="letter-cube">P</div>
+                    <div id="Q" data-letter="Q" class="letter-cube">Q</div>
+                    <div id="R" data-letter="R" class="letter-cube">R</div>
+                    <div id="S" data-letter="S" class="letter-cube">S</div>
+                    <div id="T" data-letter="T" class="letter-cube">T</div>
+                    <div id="U" data-letter="U" class="letter-cube">U</div>
+                    <div id="V" data-letter="V" class="letter-cube">V</div>
+                    <div id="W" data-letter="W" class="letter-cube">W</div>
+                    <div id="X" data-letter="X" class="letter-cube">X</div>
+                    <div id="Y" data-letter="Y" class="letter-cube">Y</div>
+                    <div id="Z" data-letter="Z" class="letter-cube">Z</div>
+            </div>
+            <div id="sec-options"> 
+                <fieldset>
+                    <legend>
+                            <strong>Opciones</strong>
+                    </legend>
+                    <article >
+                        <div class="sec-options-base">                               
+                            <p>
+                                <strong> Game of letther </strong> es un juego interactivo
+                                que te permite entrenar tu mente para mejorar tu memoria
+                                de corto plazo.
+                            </p>   
+                        </div>                    
+                        <div class="sec-options-base">
+                            Las reglas son sencillas:     
+                        </div> 
+                        <div class="sec-options-text">                                                                                        
+                            <ol>
+                                <li>Presiona el boton <strong> Iniciar Juego </strong></li>
+                                <li>Memoriza la secuencia de letras</li>
+                                <li>Repite la secuencia y sube de nivel.</li>
+                            </ol>                              
+                        </div>    
+                    </article>
+                    <article>
+                        <div>                                                 
+                            <div>
+                                <input type="button" class="btn-base" value="Iniciar a Jugar" onclick="initGame()">
+                                <input type="button" class="btn-base" value="Salir">  
+                            </div>
+                            <div>
+                                    <div class="lbl-base">Nivel: </div>
+                                    <div class="lbl-base lbl-nivel lbl-nivel-pass">1</div>
+                                    <div class="lbl-base lbl-nivel">2</div>
+                                    <div class="lbl-base lbl-nivel">3</div>
+                                    <div class="lbl-base lbl-nivel">4</div>
+                                    <div class="lbl-base lbl-nivel">5</div>
+                                    <div class="lbl-base lbl-nivel">6</div>
+                                    <div class="lbl-base lbl-nivel">7</div>
+                                    <div class="lbl-base lbl-nivel">8</div>
+                                    <div class="lbl-base lbl-nivel">9</div>
+                                    <div class="lbl-base lbl-nivel">10</div>
+                            </div>
+                        </div>
+                    </article>                     
+                </fieldset>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    fillLetther()
+</script>
+</html>
+
