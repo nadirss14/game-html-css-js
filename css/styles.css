@@ -1,0 +1,163 @@
+* {
+    font-display: 'Arial';
+    margin: 0;
+    padding: 0;
+    background: white;
+    font-family: 'Orbitron', cursive;
+    font-size: small;
+}
+
+#header {
+    text-align: center;
+    font-size: xx-large; 
+    height: 80px;
+}
+
+#sec-main {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-end;
+    align-content: center;
+    justify-content: space-around; 
+    height: 400px;
+
+}
+
+
+#sec-game {  
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 60%;
+    height: inherit;
+    background: whitesmoke;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+}
+
+#sec-game :hover {
+    color: lightgray;
+}
+
+.letter-cube{
+    display: inline-block;
+    width: 100px;
+    height: 60px;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+    margin: 2px;
+    background: white;
+    color: black;
+    font-family: 'Orbitron', cursive;
+    font-size: xx-large;
+    text-align: center;
+    padding-top: 5px;
+}
+
+.letter-cube-light {
+    background-color: black;
+}
+
+#sec-options {
+    display: block;
+    width: 35%;
+    height: inherit;
+    background: whitesmoke;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+}
+
+fieldset {   
+    height: inherit;
+    border: none;
+    background: inherit;
+    padding-left: 10px;
+}
+
+article {
+    background: inherit;
+}
+article div {
+    background: inherit;
+}
+article div p {
+    background: inherit;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+ol {
+    background: inherit;
+    font-family: inherit;
+    font-size: inherit;
+}
+li {
+    background: inherit;
+    font-family: inherit;
+    font-size: inherit;
+}
+legend {
+    margin-top: 10px;
+    background: inherit;
+}
+strong {
+    background: inherit;
+}
+
+.sec-options-base {
+    background: inherit;
+    display: block;
+    padding-left: 10px;
+    margin-top: 10px;
+    font-family: 'Roboto', cursive;
+    font-size: medium;
+}
+.sec-options-text{
+    background: inherit;
+    display: block;
+    padding-left: 50px;
+    margin-top: 10px;
+    font-family: 'Roboto', cursive;
+    font-size: medium;
+}
+
+.lbl-base {
+    display: inline-block;
+    text-align: center;
+    margin-left: 5px;
+    margin-top: 5px;
+    font-weight: bold;
+    font-size: medium;
+}
+.lbl-nivel{
+    height: 25px;
+    width: 28px;
+    border: 1px solid lightgray;
+    border-radius: 2px;
+    background-color: darkseagreen;
+    font-weight: bold;
+    font-size: medium;
+    font-style: normal; 
+}
+
+.lbl-nivel-pass {
+    background-color: green;
+    color: white;
+}
+
+
+.btn-base{
+    display: inline-block;
+    align-items: center;
+    background-color: cornflowerblue;
+    font-weight: bold;
+    font-size: medium;
+    font-style: italic; 
+    color: white;
+    margin: 10px;
+    width: 200px;
+    height:40px;
+    border: 1px solid lightgray;
+    border-radius: 3px;   
+}
