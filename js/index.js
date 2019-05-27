@@ -77,7 +77,6 @@ class GameOfLetther {
 
     evalGame(){
         for(let i =0 ;i < this.Level;i++){
-            debugger
             if(!(this.secuenceClick[this.Level-1]===letthers[this.secuence[this.Level-1]]) ){
                return this.youLost()
             }
@@ -86,8 +85,9 @@ class GameOfLetther {
         let mensaje= `Nivel ${this.Level} alcanzado` 
         swal(saludo,mensaje,'info')
         .then(() => {
-            this.Level++      
-            this.disableClick()     
+            this.Level++     
+            this.disableClick()    
+            this.lightLevels(this.Level)  
             if(this.Level=== LAST_LEVEL+1){
                 this.youWin()
             }else{
@@ -97,20 +97,39 @@ class GameOfLetther {
         
     }
 
+    lightLevels(level){
+        const levelId= `level-${level}`
+        document.getElementById(levelId).classList.add('lbl-nivel-pass')
+    }
+
     youWin(){
+        this.enableClickButton()
         swal('Felicidades!!!', 'ganaste el juego','success')
     }
 
     youLost(){
+        for(let i = 2; i <= LAST_LEVEL; i++ ){
+            const levelId= `level-${i}`
+            document.getElementById(levelId).classList.remove('lbl-nivel-pass')
+        }
+        this.enableClickButton()
         swal('Sorry!!! :)','El juego a terminado','error')
+    }
+
+    enableClickButton(){
+        document.getElementById('btn-eval').removeEventListener('click',evaluation)
+        document.getElementById('btn-init').style.display='inline-block'
     }
 
 }
 
 function initGame() {
+    document.getElementById('btn-init').style.display='none'
+    document.getElementById('btn-eval').addEventListener('click',evaluation)
     window.GameOfLetther = new GameOfLetther()
   }
  
   function evaluation(){
+      debugger
       window.GameOfLetther.evalGame()
   }

@@ -19,7 +19,8 @@
 <body>
     <section >
         <div class="banner">  
-                <div id="header" >Game of letther</div>
+            <div id="header" ></div>
+            <p class="title">Game of letther</p>
         </div>
         
         <div id="sec-main">         
@@ -72,28 +73,29 @@
                             <ol>
                                 <li>Presiona el boton <strong> Iniciar Juego </strong></li>
                                 <li>Memoriza la secuencia de letras</li>
-                                <li>Repite la secuencia y sube de nivel.</li>
+                                <li>Repite la secuencia</li>
+                                <li><strong>Evalua la jugada</strong> y sube de nivel</li>        
                             </ol>                              
                         </div>    
-                    </article>
+                    </article>  
                     <article>
                         <div>                                                 
                             <div>
-                                <input type="button" class="btn-base" value="Iniciar a Jugar" onclick="initGame()">
-                                <input type="button" class="btn-base" value="Evaluar jugada" onclick="evaluation()">  
+                                <input id="btn-init" type="button" class="btn-base" value="Iniciar a Jugar" onclick="initGame()">
+                                <input id="btn-eval" type="button" class="btn-base" value="Evaluar jugada" >  
                             </div>
                             <div>
-                                    <div class="lbl-base">Nivel: </div>
-                                    <div class="lbl-base lbl-nivel lbl-nivel-pass">1</div>
-                                    <div class="lbl-base lbl-nivel">2</div>
-                                    <div class="lbl-base lbl-nivel">3</div>
-                                    <div class="lbl-base lbl-nivel">4</div>
-                                    <div class="lbl-base lbl-nivel">5</div>
-                                    <div class="lbl-base lbl-nivel">6</div>
-                                    <div class="lbl-base lbl-nivel">7</div>
-                                    <div class="lbl-base lbl-nivel">8</div>
-                                    <div class="lbl-base lbl-nivel">9</div>
-                                    <div class="lbl-base lbl-nivel">10</div>
+                                <div  class="lbl-base">Nivel: </div>
+                                <div id="level-1"class="lbl-base lbl-nivel lbl-nivel-pass">1</div>
+                                <div id="level-2"class="lbl-base lbl-nivel">2</div>
+                                <div id="level-3"class="lbl-base lbl-nivel">3</div>
+                                <div id="level-4"class="lbl-base lbl-nivel">9</div>
+                                <div id="level-5"class="lbl-base lbl-nivel">4</div>
+                                <div id="level-6"class="lbl-base lbl-nivel">5</div>
+                                <div id="level-7"class="lbl-base lbl-nivel">6</div>
+                                <div id="level-8"class="lbl-base lbl-nivel">7</div>
+                                <div id="level-9"class="lbl-base lbl-nivel">8</div>
+                                <div id="level-10"class="lbl-base lbl-nivel">10</div>
                             </div>
                         </div>
                     </article>                     

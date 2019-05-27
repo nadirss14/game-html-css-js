@@ -2,7 +2,7 @@
     font-display: 'Arial';
     margin: 0;
     padding: 0;
-    background: white;
+    background: white; 
     font-family: 'Orbitron', cursive;
     font-size: small;
 }
@@ -17,6 +17,13 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center
+}
+
+.title {
+    font-family: 'Roboto', cursive;
+    font-size: xx-large;
+    font-weight: bold;
+    text-align: center;
 }
 
 #sec-main {
@@ -73,6 +80,7 @@
     border: 1px solid lightgray;
     border-radius: 3px;
 }
+
 
 fieldset {   
     height: inherit;
@@ -156,7 +164,7 @@ strong {
 .btn-base{
     display: inline-block;
     align-items: center;
-    background-color: cornflowerblue;
+    background-color: green;
     font-weight: bold;
     font-size: medium;
     font-style: italic; 
