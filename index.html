@@ -19,12 +19,12 @@
 <body>
     <section >
         <div class="banner">  
-            <div id="header" ></div>
-            <p class="title">Game of letther</p>
+            <p class="title" >Game of letther</p>            
         </div>
-        
-        <div id="sec-main">         
-            <div id="sec-game"> 
+    </section>   
+
+        <section  class="sec-main">         
+            <div class="sec-game"> 
                     <div id="A" data-letter="A" class="letter-cube">A</div>
                     <div id="B" data-letter="B" class="letter-cube">B</div>
                     <div id="C" data-letter="C" class="letter-cube">C</div>
@@ -53,7 +53,7 @@
                     <div id="Y" data-letter="Y" class="letter-cube">Y</div>
                     <div id="Z" data-letter="Z" class="letter-cube">Z</div>
             </div>
-            <div id="sec-options"> 
+            <div class="sec-options"> 
                 <fieldset>
                     <legend>
                             <strong>Opciones</strong>
@@ -81,8 +81,9 @@
                     <article>
                         <div>                                                 
                             <div>
-                                <input id="btn-init" type="button" class="btn-base" value="Iniciar a Jugar" onclick="initGame()">
-                                <input id="btn-eval" type="button" class="btn-base" value="Evaluar jugada" >  
+                                <input type="button" class="btn-base no-disabled" value="Iniciar a Jugar" id="btnInit" onclick="initGame()">
+                                <input type="button" class="btn-base disabled" value="Evaluar jugada" id="btnEval" onclick="evaluation()">  
+
                             </div>
                             <div>
                                 <div  class="lbl-base">Nivel: </div>
@@ -101,8 +102,8 @@
                     </article>                     
                 </fieldset>
             </div>
-        </div>
-    </div>
+        </section>
+
 </body>
 <script>
     fillLetther()
