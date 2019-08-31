@@ -7,6 +7,7 @@
     font-size: small;
 }
 
+
 .banner {
     display: flex;
     flex-direction: column;
@@ -24,7 +25,6 @@
 .sec-main {
     display: flex;
     justify-content: space-around;
-    min-height: 350px;
 }
 
 
@@ -35,7 +35,7 @@
     flex-wrap: wrap;
     width: 60%;
     height: inherit;
-    background: rgb(134, 17, 109);
+    background:white;
     border: 1px solid lightgray;
     border-radius: 3px;
 }
@@ -67,7 +67,7 @@
     display: block;
     width: 35%;
     height: inherit;
-    background: whitesmoke;
+    background: white;
     border: 1px solid lightgray;
     border-radius: 3px;
 }
@@ -136,14 +136,16 @@ strong {
     font-size: medium;
 }
 .lbl-nivel{
-    height: 25px;
-    width: 28px;
+    height: 30px;
+    width: 30px;
     border: 1px solid lightgray;
-    border-radius: 2px;
+    border-radius: 50%;
     background-color: darkseagreen;
     font-weight: bold;
     font-size: medium;
     font-style: normal; 
+    text-align: center;
+    vertical-align: middle;
 }
 
 .lbl-nivel-pass {
@@ -155,7 +157,6 @@ strong {
 .btn-base{
     display: inline-block;
     align-items: center;
-
     font-weight: bold;
     font-size: medium;
     font-style: italic; 
@@ -183,6 +184,12 @@ strong {
 }
 
 @media screen and (max-width:1000px) {
+    .banner {
+        height: 15vh;
+    }
+    .title {
+        font-size: x-large; 
+    }
     .sec-main {
         display: block;
         margin-left: 10%;   
@@ -193,16 +200,27 @@ strong {
     .sec-options {
         margin-top: 20px;
         width: 80%;
-
     }
+    .sec-options strong {
+        font-size: medium;
+    } 
     .letter-cube{
         width: 80px;
         height: 45px;
         font-size: x-large;
     }
+
+
+
 }
 
-@media screen and (max-width:600px) {
+@media screen and (max-width:650px) {
+    .banner {
+        height: 10vh;
+    }
+    .title {
+        font-size: x-large; 
+    }
     .letter-cube{
         width: 50px;
         height: 30px;
@@ -212,20 +230,84 @@ strong {
         margin-top: 20px;
         width: 80%;
     }
+    .sec-options strong {
+        font-size: small;
+    } 
     .sec-options-base{
         font-size: small;
     }
+
+    .sec-options-text{
+        font-size: small;
+        padding-left: 25px;
+    }
+
+    .lbl-nivel{
+        height: 25px;
+        width: 25px;
+        border-radius: 50%;
+    }
+
+    .btn-base{
+        margin: 10px;
+        width: 130px;
+        height: 30px;
+        border: 1px solid lightgray;
+        border-radius: 15px;  
+        font-size: small; 
+    }
+    
+
+
 }
 
-@media screen and (max-width:400px) {
+@media screen and (max-width:460px) {
+    .banner {
+        height: 10vh;
+    }
+    .title {
+        font-size: x-large; 
+    }
     .letter-cube{
         width: 35px;
         height: 20px;
         font-size: medium;
     }
-
+    .sec-options strong {
+        font-size: smaller;
+    } 
     .sec-options-base{
         font-size: smaller;
     }
+    .sec-options-text{
+        font-size: smaller;
+    }
+    .btn-base{
+        margin: 3px;
+        width: 100px;
+        height: 25px;
+        border: 1px solid lightgray;
+        border-radius: 10px;  
+        font-size: x-small; 
+    }
+
+    .lbl-base {
+        margin-left: 1px;
+        margin-top: 1px;
+        margin-bottom: 5px;
+        font-weight: bold;
+        font-size: 8px;
+    }
+    .lbl-nivel{
+        height: 10px;
+        width: 12px;
+        border: 1px solid lightgray;
+        border-radius: 50%;
+        background-color: darkseagreen;
+        font-weight: bold;
+        font-size: 8px;
+        font-style: normal; 
+    }
+
 }
 
