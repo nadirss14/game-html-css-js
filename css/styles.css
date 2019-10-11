@@ -1,313 +1,305 @@
 * {
-    font-display: 'Arial';
-    margin: 0;
-    padding: 0;
-    background: white; 
-    font-family: 'Orbitron', cursive;
-    font-size: small;
+  font-display: "Arial";
+  margin: 0;
+  padding: 0;
+  background: white;
+  font-family: "Orbitron", cursive;
+  font-size: small;
 }
-
 
 .banner {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 30vh;
 }
 .title {
-    text-align: center;
-    font-size: xx-large; 
-    background-color: transparent;
-    padding-bottom: 10px;
+  text-align: center;
+  font-size: xx-large;
+  background-color: transparent;
+  padding-bottom: 10px;
 }
 
 .sec-main {
-    display: flex;
-    justify-content: space-around;
+  display: flex;
+  justify-content: space-around;
 }
 
-
-.sec-game {  
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    width: 60%;
-    height: inherit;
-    background:white;
-    border: 1px solid lightgray;
-    border-radius: 3px;
+.sec-game {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: stretch;
+  width: 60%;
+  height: inherit;
+  background: white;
+  border: 1px solid lightgray;
+  border-radius: 3px;
 }
 
 .sec-game :hover {
-    color:rgb(134, 17, 109);;
+  color: rgb(134, 17, 109);
 }
 
-.letter-cube{
-    display: inline-block;
-    width: 100px;
-    height: 60px;
-    border: 4px solid black;
-    border-radius: 10px;
-    margin: 2px;
-    background: white;
-    color: black;
-    font-family: 'Orbitron', cursive;
-    font-size: xx-large;
-    text-align: center;
-    padding-top: 5px;
+.letter-cube {
+  display: inline-block;
+  width: 100px;
+  height: 60px;
+  border: 4px solid black;
+  border-radius: 10px;
+  margin: 2px;
+  background: white;
+  color: black;
+  font-family: "Orbitron", cursive;
+  font-size: xx-large;
+  text-align: center;
+  padding-top: 5px;
 }
 
 .letter-cube-light {
-    background-color: black;
+  background-color: black;
 }
 
 .sec-options {
-    display: block;
-    width: 35%;
-    height: inherit;
-    background: white;
-    border: 1px solid lightgray;
-    border-radius: 3px;
+  display: block;
+  width: 35%;
+  height: inherit;
+  background: white;
+  border: 1px solid lightgray;
+  border-radius: 3px;
 }
 
-
-fieldset {   
-    height: inherit;
-    border: none;
-    background: inherit;
-    padding-left: 10px;
+fieldset {
+  height: inherit;
+  border: none;
+  background: inherit;
+  padding: 10px;
 }
 
 article {
-    background: inherit;
+  background: inherit;
 }
 article div {
-    background: inherit;
+  background: inherit;
 }
 article div p {
-    background: inherit;
-    font-family: inherit;
-    font-size: inherit;
+  background: inherit;
+  font-family: inherit;
+  font-size: inherit;
 }
 
 ol {
-    background: inherit;
-    font-family: inherit;
-    font-size: inherit;
+  background: inherit;
+  font-family: inherit;
+  font-size: inherit;
 }
 li {
-    background: inherit;
-    font-family: inherit;
-    font-size: inherit;
+  background: inherit;
+  font-family: inherit;
+  font-size: inherit;
 }
 legend {
-    margin-top: 10px;
-    background: inherit;
+  margin-top: 10px;
+  background: inherit;
 }
 strong {
-    background: inherit;
+  background: inherit;
 }
 
 .sec-options-base {
-    background: inherit;
-    display: block;
-    padding-left: 10px;
-    margin-top: 10px;
-    font-family: 'Roboto', cursive;
-    font-size: medium;
+  background: inherit;
+  display: block;
+  padding-left: 10px;
+  margin-top: 10px;
+  font-family: "Roboto", cursive;
+  font-size: medium;
 }
-.sec-options-text{
-    background: inherit;
-    display: block;
-    padding-left: 50px;
-    margin-top: 10px;
-    font-family: 'Roboto', cursive;
-    font-size: medium;
+.sec-options-text {
+  background: inherit;
+  display: block;
+  padding-left: 50px;
+  margin-top: 10px;
+  font-family: "Roboto", cursive;
+  font-size: medium;
+}
+
+.sec-options-nivel {
+  padding: 10px;
 }
 
 .lbl-base {
-    display: inline-block;
-    text-align: center;
-    margin-left: 5px;
-    margin-top: 5px;
-    font-weight: bold;
-    font-size: medium;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  margin-left: 5px;
+  margin-top: 5px;
+  font-weight: bold;
+  font-size: medium;
 }
-.lbl-nivel{
+.lbl-nivel {
+  height: 30px;
+  width: 30px;
+  border: 1px solid lightgray;
+  border-radius: 50%;
+  background-color: darkseagreen;
+  font-weight: bold;
+  font-size: medium;
+  font-style: normal;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.lbl-nivel-pass {
+  background-color: green;
+  color: white;
+}
+
+.btn-base {
+  display: inline-block;
+  align-items: center;
+  font-weight: bold;
+  font-size: medium;
+  font-style: italic;
+  margin: 10px;
+  width: 200px;
+  height: 40px;
+  border: 1px solid lightgray;
+  border-radius: 20px;
+}
+
+.disabled {
+  background-color: gray;
+  color: white;
+}
+.no-disabled {
+  background-color: blue;
+  color: white;
+}
+
+.lightLetther {
+  background-color: black;
+  color: white;
+}
+
+@media screen and (max-width: 1000px) {
+  .banner {
+    height: 15vh;
+  }
+  .title {
+    font-size: x-large;
+  }
+  .sec-main {
+    display: block;
+    margin-left: 10%;
+  }
+  .sec-game {
+    width: 80%;
+  }
+  .sec-options {
+    margin-top: 20px;
+    width: 80%;
+  }
+  .sec-options strong {
+    font-size: medium;
+  }
+  .letter-cube {
+    width: 80px;
+    height: 45px;
+    font-size: x-large;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .banner {
+    height: 10vh;
+  }
+  .title {
+    font-size: x-large;
+  }
+  .letter-cube {
+    width: 50px;
     height: 30px;
-    width: 30px;
+    font-size: large;
+  }
+  .sec-options {
+    margin-top: 20px;
+    width: 80%;
+  }
+  .sec-options strong {
+    font-size: small;
+  }
+  .sec-options-base {
+    font-size: small;
+  }
+
+  .sec-options-text {
+    font-size: small;
+    padding-left: 25px;
+  }
+
+  .lbl-nivel {
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+  }
+
+  .btn-base {
+    margin: 10px;
+    width: 130px;
+    height: 30px;
+    border: 1px solid lightgray;
+    border-radius: 15px;
+    font-size: small;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .banner {
+    height: 10vh;
+  }
+  .title {
+    font-size: x-large;
+  }
+  .letter-cube {
+    width: 35px;
+    height: 20px;
+    font-size: medium;
+  }
+  .sec-options strong {
+    font-size: smaller;
+  }
+  .sec-options-base {
+    font-size: smaller;
+  }
+  .sec-options-text {
+    font-size: smaller;
+  }
+  .btn-base {
+    margin: 3px;
+    width: 100px;
+    height: 25px;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    font-size: x-small;
+  }
+
+  .lbl-base {
+    margin-left: 1px;
+    margin-top: 1px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 8px;
+  }
+  .lbl-nivel {
+    height: 10px;
+    width: 12px;
     border: 1px solid lightgray;
     border-radius: 50%;
     background-color: darkseagreen;
     font-weight: bold;
-    font-size: medium;
-    font-style: normal; 
-    text-align: center;
-    vertical-align: middle;
+    font-size: 8px;
+    font-style: normal;
+  }
 }
-
-.lbl-nivel-pass {
-    background-color: green;
-    color: white;
-}
-
-
-.btn-base{
-    display: inline-block;
-    align-items: center;
-    font-weight: bold;
-    font-size: medium;
-    font-style: italic; 
-    margin: 10px;
-    width: 200px;
-    height:40px;
-    border: 1px solid lightgray;
-    border-radius: 20px;   
-}
-
-
-.disabled {
-    background-color: gray;
-    color: white;
-}
-.no-disabled {
-    background-color: blue;
-    color: white;
-}
-
-
-.lightLetther{
-    background-color: black;
-    color: white;
-}
-
-@media screen and (max-width:1000px) {
-    .banner {
-        height: 15vh;
-    }
-    .title {
-        font-size: x-large; 
-    }
-    .sec-main {
-        display: block;
-        margin-left: 10%;   
-    }
-    .sec-game {
-        width: 80%;
-    }
-    .sec-options {
-        margin-top: 20px;
-        width: 80%;
-    }
-    .sec-options strong {
-        font-size: medium;
-    } 
-    .letter-cube{
-        width: 80px;
-        height: 45px;
-        font-size: x-large;
-    }
-
-
-
-}
-
-@media screen and (max-width:650px) {
-    .banner {
-        height: 10vh;
-    }
-    .title {
-        font-size: x-large; 
-    }
-    .letter-cube{
-        width: 50px;
-        height: 30px;
-        font-size: large;
-    }
-    .sec-options {
-        margin-top: 20px;
-        width: 80%;
-    }
-    .sec-options strong {
-        font-size: small;
-    } 
-    .sec-options-base{
-        font-size: small;
-    }
-
-    .sec-options-text{
-        font-size: small;
-        padding-left: 25px;
-    }
-
-    .lbl-nivel{
-        height: 25px;
-        width: 25px;
-        border-radius: 50%;
-    }
-
-    .btn-base{
-        margin: 10px;
-        width: 130px;
-        height: 30px;
-        border: 1px solid lightgray;
-        border-radius: 15px;  
-        font-size: small; 
-    }
-    
-
-
-}
-
-@media screen and (max-width:460px) {
-    .banner {
-        height: 10vh;
-    }
-    .title {
-        font-size: x-large; 
-    }
-    .letter-cube{
-        width: 35px;
-        height: 20px;
-        font-size: medium;
-    }
-    .sec-options strong {
-        font-size: smaller;
-    } 
-    .sec-options-base{
-        font-size: smaller;
-    }
-    .sec-options-text{
-        font-size: smaller;
-    }
-    .btn-base{
-        margin: 3px;
-        width: 100px;
-        height: 25px;
-        border: 1px solid lightgray;
-        border-radius: 10px;  
-        font-size: x-small; 
-    }
-
-    .lbl-base {
-        margin-left: 1px;
-        margin-top: 1px;
-        margin-bottom: 5px;
-        font-weight: bold;
-        font-size: 8px;
-    }
-    .lbl-nivel{
-        height: 10px;
-        width: 12px;
-        border: 1px solid lightgray;
-        border-radius: 50%;
-        background-color: darkseagreen;
-        font-weight: bold;
-        font-size: 8px;
-        font-style: normal; 
-    }
-
-}
-
