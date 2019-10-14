@@ -7,12 +7,33 @@
   font-size: small;
 }
 
+body {
+  min-height: 100vh;
+  /* background-image: linear-gradient(
+    179.1deg,
+    rgba(247, 238, 238, 1) -1.9%,
+    rgba(247, 202, 201, 1) 44.9%,
+    rgba(145, 168, 208, 1) 96.1%
+  ); */
+  background-image: linear-gradient(
+    75.5deg,
+    rgba(217, 115, 115, 1) 22.3%,
+    rgba(234, 245, 165, 1) 59.1%,
+    rgba(165, 245, 242, 1) 89.7%
+  );
+}
+
+section {
+  background-color: transparent;
+}
+
 .banner {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 30vh;
+  background-color: transparent;
 }
 .title {
   text-align: center;
@@ -24,6 +45,7 @@
 .sec-main {
   display: flex;
   justify-content: space-around;
+  background-color: transparent;
 }
 
 .sec-game {
@@ -73,15 +95,17 @@
 
 .drop-down {
   width: 220px;
-  margin-left: 10px;
   height: 30px;
-  font-weight: bold;
+  margin-left: 10px;
   border: 1px solid grey;
   border-radius: 5px;
+  font-weight: bold;
+  font-size: medium;
 }
 
 .drop-down option {
   font-weight: bold;
+  font-size: medium;
 }
 
 fieldset {
@@ -164,8 +188,16 @@ hr {
 }
 
 .lbl-nivel-pass {
-  background-color: green;
+  background: green;
   color: white;
+}
+
+.level__container--inactive {
+  display: none;
+}
+
+.level__container--active {
+  display: block;
 }
 
 .btn-base {
@@ -254,7 +286,6 @@ hr {
   .lbl-nivel {
     height: 25px;
     width: 25px;
-    border-radius: 50%;
   }
 
   .btn-base {
@@ -268,8 +299,14 @@ hr {
 }
 
 @media screen and (max-width: 460px) {
+  hr {
+    margin: 3px;
+  }
+  fieldset {
+    padding: 3px;
+  }
   .banner {
-    height: 10vh;
+    height: 8vh;
   }
   .title {
     font-size: x-large;
@@ -278,6 +315,9 @@ hr {
     width: 35px;
     height: 20px;
     font-size: medium;
+  }
+  .sec-options {
+    margin-top: 3px;
   }
   .sec-options strong {
     font-size: smaller;
@@ -288,6 +328,26 @@ hr {
   .sec-options-text {
     font-size: smaller;
   }
+
+  .sec-options-nivel {
+    padding: 3px;
+  }
+
+  .drop-down {
+    width: 140px;
+    height: 20px;
+    font-size: smaller;
+  }
+
+  .drop-down::-webkit-input-placeholder {
+    font-size: smaller;
+  }
+
+  .drop-down option {
+    min-height: 0.8em;
+    font-size: smaller;
+  }
+
   .btn-base {
     margin: 3px;
     width: 100px;
@@ -308,8 +368,6 @@ hr {
     height: 10px;
     width: 12px;
     border: 1px solid lightgray;
-    border-radius: 50%;
-    background-color: darkseagreen;
     font-weight: bold;
     font-size: 8px;
     font-style: normal;

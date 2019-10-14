@@ -46,6 +46,7 @@ class GameOfLetther {
     console.log(typeof this.LAST_LEVEL);
     this.initialize();
     this.generateSecuence();
+    this.showLevelContainer(true);
     setTimeout(() => this.nextLevel(), 500);
   }
 
@@ -63,6 +64,8 @@ class GameOfLetther {
 
   nextLevel() {
     this.subLevel = 0;
+    let showLevel = document.querySelector(`#level-${this.Level}`);
+    showLevel.classList.add("lbl-nivel-pass");
     this.paintSecuence();
     this.enableClick();
   }
@@ -122,7 +125,8 @@ class GameOfLetther {
     }
     let saludo = "Felicidades!!!";
     let mensaje = `Nivel ${this.Level} alcanzado`;
-    swal(saludo, mensaje, "info").then(() => {
+
+    swal(saludo, mensaje, { icon: "success" }).then(() => {
       this.Level++;
       this.disableClick();
       if (this.Level === this.LAST_LEVEL + 1) {
@@ -135,12 +139,12 @@ class GameOfLetther {
 
   youWin() {
     swal("Felicidades!!!", "ganaste el juego", "success");
-    this.enableDisableButton(false);
+    this.enableDisableLevelActive();
   }
 
   youLost() {
     swal("Sorry!!! :)", "El juego a terminado", "error");
-    this.enableDisableButton(false);
+    this.enableDisableLevelActive();
   }
 
   enableDisableButton(value) {
@@ -159,6 +163,26 @@ class GameOfLetther {
       document.querySelector("#btnEval").classList.remove("no-disabled");
       document.querySelector("#btnEval").setAttribute("disable", "true");
     }
+  }
+
+  showLevelContainer(show) {
+    let levelContainer = document.querySelector("#level-container");
+    if (show) {
+      levelContainer.classList.remove("level__container--inactive");
+      levelContainer.classList.add("level__container--active");
+    } else {
+      levelContainer.classList.remove("level__container--active");
+      levelContainer.classList.add("level__container--inactive");
+    }
+  }
+
+  enableDisableLevelActive() {
+    for (let i = 1; i <= this.LAST_LEVEL; i++) {
+      let showLevel = document.querySelector(`#level-${i + 1}`);
+      showLevel.classList.remove("lbl-nivel-pass");
+    }
+    this.showLevelContainer(false);
+    this.enableDisableButton(false);
   }
 }
 
