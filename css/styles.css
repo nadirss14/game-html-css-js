@@ -214,11 +214,15 @@ hr {
 }
 
 .disabled {
-  background-color: gray;
-  color: white;
+  background-image: radial-gradient(
+    circle farthest-corner at 10% 20%,
+    rgba(226, 240, 254, 1) 0%,
+    rgba(255, 247, 228, 1) 90%
+  );
+  color: black;
 }
 .no-disabled {
-  background-color: blue;
+  background: linear-gradient(to right, #0575e6, #021b79);
   color: white;
 }
 
@@ -335,8 +339,8 @@ hr {
 
   .drop-down {
     width: 140px;
-    height: 20px;
-    font-size: smaller;
+    height: 18px;
+    font-size: xx-small;
   }
 
   .drop-down::-webkit-input-placeholder {
@@ -351,10 +355,10 @@ hr {
   .btn-base {
     margin: 3px;
     width: 100px;
-    height: 25px;
+    height: 18px;
     border: 1px solid lightgray;
-    border-radius: 10px;
-    font-size: x-small;
+    border-radius: 6px;
+    font-size: xx-small;
   }
 
   .lbl-base {
