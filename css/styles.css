@@ -71,6 +71,19 @@
   border-radius: 3px;
 }
 
+.drop-down {
+  width: 220px;
+  margin-left: 10px;
+  height: 30px;
+  font-weight: bold;
+  border: 1px solid grey;
+  border-radius: 5px;
+}
+
+.drop-down option {
+  font-weight: bold;
+}
+
 fieldset {
   height: inherit;
   border: none;
@@ -108,6 +121,10 @@ strong {
   background: inherit;
 }
 
+hr {
+  margin: 10px;
+}
+
 .sec-options-base {
   background: inherit;
   display: block;
@@ -139,16 +156,11 @@ strong {
   font-size: medium;
 }
 .lbl-nivel {
-  height: 30px;
-  width: 30px;
-  border: 1px solid lightgray;
+  height: 28px;
+  width: 28px;
   border-radius: 50%;
   background-color: darkseagreen;
-  font-weight: bold;
-  font-size: medium;
   font-style: normal;
-  text-align: center;
-  vertical-align: middle;
 }
 
 .lbl-nivel-pass {
@@ -163,10 +175,10 @@ strong {
   font-size: medium;
   font-style: italic;
   margin: 10px;
-  width: 200px;
+  width: 180px;
   height: 40px;
   border: 1px solid lightgray;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 
 .disabled {

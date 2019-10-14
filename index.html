@@ -74,20 +74,22 @@
             </div>
             <div class="sec-options-text">
               <ol>
-                <li>Presiona el boton <strong> Iniciar Juego </strong></li>
-                <li>Memoriza la secuencia de letras</li>
-                <li>Repite la secuencia</li>
-                <li><strong>Evalua la jugada</strong> y sube de nivel</li>
+                <li>Seleccione el <strong> Nivel </strong> de complejidad.</li>
+                <li>Presiona el boton <strong> Iniciar Juego. </strong></li>
+                <li>Memoriza la secuencia de letras.</li>
+                <li>Repite la secuencia.</li>
+                <li><strong>Evalua la jugada</strong> y sube de nivel.</li>
               </ol>
             </div>
           </article>
+          <hr />
           <article>
             <div class="sec-options-nivel">
               <label for="select-level">
-                <strong>Selecciones un nivel: </strong>
+                <strong>Niveles: </strong>
               </label>
-              <select id="select-level">
-                <option value="-1">-Selecciones un nivel-</option>
+              <select id="select-level" class="drop-down">
+                <option value="-1">- Selecciones un nivel -</option>
                 <option value="1">Nivel 1</option>
                 <option value="2">Nivel 2</option>
                 <option value="3">Nivel 3</option>
@@ -105,14 +107,14 @@
                 <input
                   type="button"
                   class="btn-base no-disabled"
-                  value="Iniciar a Jugar"
+                  value="Iniciar Juego"
                   id="btnInit"
                   onclick="initGame()"
                 />
                 <input
                   type="button"
                   class="btn-base disabled"
-                  value="Evaluar jugada"
+                  value="Evaluar Jugada"
                   id="btnEval"
                   onclick="evaluation()"
                 />
