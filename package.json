@@ -1,0 +1,23 @@
+{
+  "name": "game-html-css-js",
+  "version": "1.0.0",
+  "description": "Uso de HTML, CSS y JavaScrip Vanilla",
+  "main": "index.js",
+  "scripts": {
+    "start": "live-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nadirss14/game-html-css-js.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nadirss14/game-html-css-js/issues"
+  },
+  "homepage": "https://github.com/nadirss14/game-html-css-js#readme",
+  "devDependencies": {
+    "live-server": "^1.2.1"
+  }
+}
