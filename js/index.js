@@ -187,6 +187,7 @@ class GameOfLetther {
 }
 
 function initGame() {
+  debugger;
   const selectedLevel = document.querySelector("#select-level");
   if (selectedLevel.value !== "-1") {
     const LAST_LEVEL = parseInt(selectedLevel.value);

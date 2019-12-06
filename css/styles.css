@@ -292,6 +292,9 @@ hr {
     width: 25px;
   }
 
+  select {
+    display: block;
+  }
   .btn-base {
     margin: 10px;
     width: 130px;
@@ -338,6 +341,7 @@ hr {
   }
 
   .drop-down {
+    display: block;
     width: 140px;
     height: 18px;
     font-size: xx-small;
