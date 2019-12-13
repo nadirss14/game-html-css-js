@@ -10,6 +10,10 @@ const btnSignOut = document
   .getElementById("btnSignOut")
   .addEventListener("click", this.handlerSignOut);
 
+const btnResetPassword = document
+  .getElementById("btnResetPassword")
+  .addEventListener("click", this.handlerResetPassword);
+
 firebase.auth().onAuthStateChanged(user => {
   if (user) {
     console.log(`${user.displayName} is login`);
@@ -72,15 +76,31 @@ class Authentication {
   }
 
   authSignOut() {
-    debugger;
     const user = firebase.auth().currentUser;
 
     return firebase
       .auth()
       .signOut()
       .then(() => {
-        debugger;
         swal(`Bye!!! `, user.displayName, "success");
+      });
+  }
+
+  authResetPasswordForEmail(email) {
+    firebase
+      .auth()
+      .sendPasswordResetEmail(email)
+      .then(() => {
+        debugger;
+        swal(
+          `Fue enviado un email a la cuenta ${email} con un lik para recuperar tu contraseña `,
+          "",
+          "success"
+        );
+      })
+      .catch(error => {
+        console.log(error);
+        swal("Ups!!! :(", error.message, "error");
       });
   }
 }
@@ -106,4 +126,15 @@ function handlerAuthGoogleAccount() {
 function handlerSignOut() {
   window.Authentication = new Authentication();
   window.Authentication.authSignOut();
+}
+
+function handlerResetPassword() {
+  const email = document.getElementById("reset_email");
+  window.Authentication = new Authentication();
+  debugger;
+  if (email.value !== "") {
+    window.Authentication.authResetPasswordForEmail(email.value);
+  } else {
+    swal(`Deben ingresar un correo electronico valido`, "Info", "warning");
+  }
 }
