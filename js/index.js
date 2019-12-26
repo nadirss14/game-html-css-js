@@ -200,3 +200,13 @@ function initGame() {
 function evaluation() {
   window.GameOfLetther.evalGame();
 }
+
+// const times= document.querySelectorAll('.MaterialItem-copy-time');
+//   let hours=0;
+//   times.forEach(element => {
+//     value= element.innerText.toString().replace(" min","");
+//     const timeToClassInMinutes= value.replace(":",".");
+//     hours= hours + parseFloat(timeToClassInMinutes);
+//   })
+
+//   console.log(`${Math.round(hours,2)/60} Horas`)

@@ -33,15 +33,29 @@
       <input id="reset_email" type="email" placeholder="juan.perez@gmail.com" />
       <button type="button" id="btnResetPassword">Reset password</button>
     </section>
+    <section>
+      <article>
+        <input id="title" type="text" placeholder="Titulo" />
+        <input id="description" type="text" placeholder="Descripcion" />
+        <input id="image" type="text" placeholder="Imagen" />
+        <input id="video" type="text" placeholder="Video" />
+      </article>
+      <button id="btnAddPost" type="button">Add post</button>
+    </section>
+    <section id="list_post" class="post__container"></section>
+
     <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
     <!-- Add Firebase products that you want to use -->
     <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
+    <!-- Add Firestore -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
+
     <!-- Compiled and minified CSS -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     />
-
+    <link rel="stylesheet" href="../css/post.css" />
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script
@@ -49,6 +63,7 @@
       type="text/javascript"
     ></script>
     <script type="text/javascript" src="../js/auth/Authentication.js"></script>
+    <script type="text/javascript" src="../js/db/conections.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   </body>
 </html>
