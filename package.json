@@ -4,7 +4,7 @@
   "description": "Uso de HTML, CSS y JavaScrip Vanilla",
   "main": "index.js",
   "scripts": {
-    "start": "live-server --host=localhost"
+    "start": "live-server --open=/public --host=localhost"
   },
   "repository": {
     "type": "git",
