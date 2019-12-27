@@ -2,6 +2,10 @@ const btnAddPost = document
   .querySelector("#btnAddPost")
   .addEventListener("click", this.handlerAddPost);
 
+const btnUploadPost = document
+  .querySelector("#image")
+  .addEventListener("change", this.handlerUploadImage);
+
 class Conections {
   constructor() {
     this.db = this.getInstance();
@@ -14,24 +18,50 @@ class Conections {
     return db;
   };
 
-  getPost(uid) {}
-
-  getAll(container) {
-    this.db.collection("post").onSnapshot(querySnapshot => {
-      if (querySnapshot.empty) {
-        container.innerHTML = this.getDefaultTemplatePost();
-      } else {
-        querySnapshot.forEach(post => {
-          container.innerHTML = this.getTemplatePost(post.data());
-        });
-      }
-    });
+  getMyPost(author) {
+    this.db
+      .collection("post")
+      .where("author", "==", author)
+      .onSnapshot(querySnapshot => {
+        if (querySnapshot.empty) {
+          container.innerHTML = this.getDefaultTemplatePost();
+        } else {
+          container.innerHTML = "";
+          querySnapshot.forEach(post => {
+            container.innerHTML =
+              container.innerHTML + this.getTemplatePost(post.data());
+          });
+        }
+      });
   }
 
-  createPost(author, description, title, image, video, tags) {
+  getAll(container) {
+    this.db
+      .collection("post")
+      .orderBy("date", "asc")
+      .onSnapshot(
+        querySnapshot => {
+          if (querySnapshot.empty) {
+            container.innerHTML = this.getDefaultTemplatePost();
+          } else {
+            container.innerHTML = "";
+            querySnapshot.forEach(post => {
+              container.innerHTML =
+                container.innerHTML + this.getTemplatePost(post.data());
+            });
+          }
+        },
+        error => {
+          swal("Sorry!!! :)", error.message, "error");
+        }
+      );
+  }
+
+  createPost(uid, author, description, title, image, video, tags) {
     return this.db
       .collection("post")
       .add({
+        uid: uid,
         author: author,
         description: description,
         date: firebase.firestore.FieldValue.serverTimestamp(),
@@ -41,10 +71,14 @@ class Conections {
         tag: tags
       })
       .then(refDoc => {
-        console.log(`Id creado con identificador ${refDoc.id}`);
+        swal("Exito!!! :)", `Post creado con id: ${refDoc.id}`, "success");
       })
       .catch(error => {
-        console.log(`Error al crear el post mensaje: ${error.message}`);
+        swal(
+          "Sorry!!! :)",
+          `Error al crear el post mensaje: ${error.message}`,
+          "error"
+        );
       });
   }
 
@@ -83,11 +117,10 @@ class Conections {
   }
 
   getTemplatePost(post) {
-    debugger;
     const template = `<article class="post__item">
                   <h2 class="post__title"><strong>${post.title}</strong></h2>
                   <div class="post__media--container">
-                    <img src="../images/banner.jpg" class="post__image" />
+                    <img src="${post.image}" class="post__image" />
                   </div>
                   <p class="post__text">
                     ${post.description}
@@ -100,9 +133,40 @@ class Conections {
                     </iframe>
                   </div>
                   <h5 class="post__author">Crete by: ${post.author}</h5>
-                  <h5 class="post__date">${new Date(post.date.seconds)}</h5>
+                  <h5 class="post__date">${new Date(
+                    post.date.seconds
+                  ).toDateString()}</h5>
                 </article>`;
     return template;
+  }
+
+  uploadImageToPost(file) {
+    const user = firebase.auth().currentUser;
+    const refStorage = firebase
+      .storage()
+      .ref(`images/${user.uid}/${file.name}`);
+    const task = refStorage.put(file);
+    task.on(
+      "state_changed",
+      snapshot => {
+        const percent = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        console.log(`Porcentaje de carga: ${percent} %`);
+      },
+      error => {
+        console.log(`Error en la carga del archivo message: ${error.message}`);
+      },
+      () => {
+        task.snapshot.ref
+          .getDownloadURL()
+          .then(url => {
+            console.log(url);
+            sessionStorage.setItem("imgNewPost", url);
+          })
+          .catch(error => {
+            console.log(`Error almacenando el URL: ${error.message}`);
+          });
+      }
+    );
   }
 }
 
@@ -114,22 +178,38 @@ function handlerAddPost() {
     author = user.displayName;
   }
 
-  const uid = user.uid;
+  const uid = user.uid || "";
   const title = document.querySelector("#title").value;
   const description = document.querySelector("#description").value;
-  const image = document.querySelector("#image").value;
+  const image = sessionStorage.getItem("imgNewPost");
   const video = document.querySelector("#video").value;
   const tags = [];
 
   window.Conections = new Conections();
-  window.Conections.createPost(author, description, title, image, video, tags);
+  window.Conections.createPost(
+    uid,
+    author,
+    description,
+    title,
+    image,
+    video,
+    tags
+  );
+  handlerGetAllPost();
 }
 
 function handlerGetAllPost() {
-  debugger;
   const container = document.querySelector("#list_post");
   window.Conections = new Conections();
   window.Conections.getAll(container);
+}
+
+function handlerUploadImage(event) {
+  debugger;
+  const file = event.target.files[0];
+
+  window.Conections = new Conections();
+  window.Conections.uploadImageToPost(file);
 }
 
 handlerGetAllPost();
