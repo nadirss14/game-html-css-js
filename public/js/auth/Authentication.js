@@ -91,9 +91,8 @@ class Authentication {
       .auth()
       .sendPasswordResetEmail(email)
       .then(() => {
-        debugger;
         swal(
-          `Fue enviado un email a la cuenta ${email} con un lik para recuperar tu contraseña `,
+          `Fue enviado un email a la cuenta ${email} con un link para recuperar tu contraseña `,
           "",
           "success"
         );

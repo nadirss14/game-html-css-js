@@ -205,7 +205,6 @@ function handlerGetAllPost() {
 }
 
 function handlerUploadImage(event) {
-  debugger;
   const file = event.target.files[0];
 
   window.Conections = new Conections();
