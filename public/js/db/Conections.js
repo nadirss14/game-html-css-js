@@ -17,7 +17,12 @@ class Conections {
     db.settings(settings);
     return db;
   };
+}
 
+class Post {
+  constructor() {
+    this.db = new Conections().db;
+  }
   getMyPost(author) {
     this.db
       .collection("post")
@@ -88,20 +93,42 @@ class Conections {
 
   getDefaultTemplatePost() {
     const template = `<article class="post__item">
-                    <h2 class="post__title"><strong>Titulo</strong></h2>
+                      <h2 class="post__title"><strong>Titulo</strong></h2>
+                      <div class="post__media--container">
+                        <img src="../images/banner.jpg" class="post__image" />
+                      </div>
+                      <p class="post__text">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting
+                        industry. Lorem Ipsum has been the industry's standard dummy text ever
+                        since the 1500s, when an unknown printer took a galley of type and
+                        scrambled it to make a type specimen book. It has survived not only
+                        five centuries, but also the leap into electronic typesetting,
+                        remaining essentially unchanged. It was popularised in the 1960s with
+                        the release of Letraset sheets containing Lorem Ipsum passages, and
+                        more recently with desktop publishing software like Aldus PageMaker
+                        including versions of Lorem Ipsum
+                      </p>
+                      <div class="post__media--container">
+                        <iframe
+                          class="post__video"
+                          src="https://www.youtube.com/watch?v=6pwkk4En9IU"
+                        >
+                        </iframe>
+                      </div>
+                      <h5 class="post__author">Crete by: nadir.soza@gmail.com</h5>
+                      <h5 class="post__date">26-12-2019 15:15:10.000</h5>
+                    </article>`;
+    return template;
+  }
+
+  getTemplatePost(post) {
+    const template = `<article class="post__item">
+                    <h2 class="post__title"><strong>${post.title}</strong></h2>
                     <div class="post__media--container">
-                      <img src="../images/banner.jpg" class="post__image" />
+                      <img src="${post.image}" class="post__image" />
                     </div>
                     <p class="post__text">
-                      Lorem Ipsum is simply dummy text of the printing and typesetting
-                      industry. Lorem Ipsum has been the industry's standard dummy text ever
-                      since the 1500s, when an unknown printer took a galley of type and
-                      scrambled it to make a type specimen book. It has survived not only
-                      five centuries, but also the leap into electronic typesetting,
-                      remaining essentially unchanged. It was popularised in the 1960s with
-                      the release of Letraset sheets containing Lorem Ipsum passages, and
-                      more recently with desktop publishing software like Aldus PageMaker
-                      including versions of Lorem Ipsum
+                      ${post.description}
                     </p>
                     <div class="post__media--container">
                       <iframe
@@ -110,33 +137,11 @@ class Conections {
                       >
                       </iframe>
                     </div>
-                    <h5 class="post__author">Crete by: nadir.soza@gmail.com</h5>
-                    <h5 class="post__date">26-12-2019 15:15:10.000</h5>
+                    <h5 class="post__author">Crete by: ${post.author}</h5>
+                    <h5 class="post__date">${new Date(
+                      post.date.seconds
+                    ).toDateString()}</h5>
                   </article>`;
-    return template;
-  }
-
-  getTemplatePost(post) {
-    const template = `<article class="post__item">
-                  <h2 class="post__title"><strong>${post.title}</strong></h2>
-                  <div class="post__media--container">
-                    <img src="${post.image}" class="post__image" />
-                  </div>
-                  <p class="post__text">
-                    ${post.description}
-                  </p>
-                  <div class="post__media--container">
-                    <iframe
-                      class="post__video"
-                      src="https://www.youtube.com/watch?v=6pwkk4En9IU"
-                    >
-                    </iframe>
-                  </div>
-                  <h5 class="post__author">Crete by: ${post.author}</h5>
-                  <h5 class="post__date">${new Date(
-                    post.date.seconds
-                  ).toDateString()}</h5>
-                </article>`;
     return template;
   }
 
@@ -200,15 +205,15 @@ function handlerAddPost() {
 
 function handlerGetAllPost() {
   const container = document.querySelector("#list_post");
-  window.Conections = new Conections();
-  window.Conections.getAll(container);
+  window.Post = new Post();
+  window.Post.getAll(container);
 }
 
 function handlerUploadImage(event) {
   const file = event.target.files[0];
 
-  window.Conections = new Conections();
-  window.Conections.uploadImageToPost(file);
+  window.Post = new Post();
+  window.Post.uploadImageToPost(file);
 }
 
 handlerGetAllPost();
